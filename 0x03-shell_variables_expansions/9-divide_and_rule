@@ -1,0 +1,3 @@
+#!/bin/bash
+echo $($power_value / $divide_value | bc)
+
