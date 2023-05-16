@@ -1,2 +1,2 @@
-#!/bin/bash
-PATH=$numberofdir
+#!/bin/baSh
+echo $PATH | wc -1
