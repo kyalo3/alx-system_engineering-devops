@@ -1,24 +1,15 @@
 #!/usr/bin/env bash
 #bash script that loops from 1 to 10 and:
 
-Hour=0
-while [ $Hour -le 12 ]
+hr=0
+while [ $hr -le 12 ]
 do
-  case $count in
-	  echo "$Hour: 0"
-	  echo "bad luck from China"
-      ;;
-    9)
-      echo "$count"
-      echo "bad luck from Japan"
-      ;;
-    17)
-      echo "$count"
-      echo "and then bad luck from Italy"
-      ;;
-    *)
-      echo "$count"
-      ;;
-   esac
-   count=$((count+1))
+	echo "$Hour: $hr"
+	minute=1
+	while [ $minute -le 59 ]
+	do
+	  echo $minute
+	  minute=$((minute+1))
+	done
+	hr=$((hr+1))
 done
