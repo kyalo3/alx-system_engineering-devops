@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
 #Prompt for the username
-read -p "Enter a username: " username
-
-# Use the 'id' command to get user information
-user_info=$(id "$username" 2>/dev/null)
-
-# Check if the user exists
-if [ $? -eq 0 ]; then
-    # Extract and display the username, user ID, and home directory
-    echo "Username: $username"
-    user_id=$(echo "$user_info" | grep -oP "(?<=uid=)\d+")
-    echo "User ID: $user_id"
-    home_dir=$(echo "$user_info" | grep -oP "(?<=home=)[^\s:]+")
-    echo "Home Directory: $home_dir"
+if [ -f /etc/passwd ]; then
+    # Use 'IFS' (Internal Field Separator) to split lines by ':'
+    IFS=":"
+    
+    # Read the /etc/passwd file line by line
+    while read -r username x user_id group_id user_info home_dir shell; do
+        # Display username, user ID, and home directory
+        echo "Username: $username"
+        echo "User ID: $user_id"
+        echo "Home Directory: $home_dir"
+    done < /etc/passwd
 else
-    echo "User '$username' does not exist."
+    echo "The /etc/passwd file does not exist."
 fi
