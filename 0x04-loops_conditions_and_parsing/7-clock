@@ -11,7 +11,7 @@ do
 		echo $minute
 		minute=$((minute+1))
 	done
-	if [ $hour -eq 1 ]; then
+	if [ $hour -eq 5 ]; then
         echo "9"
     fi
 	hour=$((hour+1))
