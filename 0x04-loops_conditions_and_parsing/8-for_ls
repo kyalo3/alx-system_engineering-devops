@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-
-#ls -1 $the_path
-
-for file in *; do
+#a Bash script that displays:The content of the current directory
+for file in *;
+do
   # Check if the file is not a directory and is not hidden
   if [[ -f "$file" && "$file" != .* ]];
   then
