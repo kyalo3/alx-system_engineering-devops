@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 #bash script that loops from 1 to 10 and:
 
-hr=0
-while [ $hr -le 12 ]
+hour=0
+while [ $hour -le 12 ]
 do
-	echo "$Hour: $hr"
+	echo "Hour: $hour"
 	minute=1
 	while [ $minute -le 59 ]
 	do
-	  echo $minute
-	  minute=$((minute+1))
+		echo $minute
+		minute=$((minute+1))
 	done
-	hr=$((hr+1))
+	if [ $hour -eq 1 ]; then
+        echo "9"
+    fi
+	hour=$((hour+1))
 done
