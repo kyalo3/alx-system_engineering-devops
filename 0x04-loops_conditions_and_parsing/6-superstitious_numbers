@@ -20,6 +20,6 @@ do
     *)
       echo "$count"
       ;;
-   esac
+    esac
       count=$((count+1))
 done
