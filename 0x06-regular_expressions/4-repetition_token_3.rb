@@ -1,2 +1,2 @@
 #!/usr/bin/env ruby
-puts ARGV[0].scan(/^h(bhont)+n/)
+puts ARGV[0].scan(/\bhbt*n\b/)
