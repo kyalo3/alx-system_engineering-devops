@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-server_ip="197.254.107.22"
-ssh -i "$HOME/.ssh/school" -o "StrictHostKeyChecking=no" ubuntu@$server_ip
+ssh -i "~/.ssh/school" ubuntu@197.254.107.22
