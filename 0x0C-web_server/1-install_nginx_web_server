@@ -1,0 +1,22 @@
+/usr/bin/env bash
+#an update
+sudo apt update
+
+#install Nginx
+sudo apt-get -y install nginx
+
+#check the status
+sudo ufw status
+
+#a nginx configuration
+echo "server {
+        listen 80;
+        listen [::]:80;
+
+        location / {
+                echo 'Hello World';
+                root /usr/share/nginx/html;
+                index index.html;
+                try_files $uri $uri/ =404;
+        }
+}" | sudo tee > /dev/null 2>&1
