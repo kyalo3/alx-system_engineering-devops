@@ -2,7 +2,24 @@
 # Configures Nginx server so that /redirect_me redirects to another page
 sudo apt-get update -y
 sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-echo "Hello World" | sudo tee /var/www/html/index
-sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
+sudo tee /etc/nginx/sites-available/redirect_me <<EOL
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name ubuntu;
+
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+
+    root /var/www/html;
+    index index.html;
+
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}
+EOL
+sudo ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
 sudo service nginx restart
