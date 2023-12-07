@@ -1,6 +1,6 @@
-0x0B. SSH
+0x0C. Web server
 DevOps
-SSH
-Network
 SysAdmin
-Security
+ By: Sylvain Kalache
+ Weight: 1
+ Project will start Nov 27, 2023 6:00 AM, must end by Nov 29, 2023 6:00 AM
