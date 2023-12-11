@@ -1,0 +1,6 @@
+./0-transfer_file 4-not_found_page_404 52.87.235.104 ubuntu ~/.ssh/id_rsa
+
+
+ssh ubuntu@54.172.124.4 -i ~/.ssh/id_rsa 'ls ~/'
+
+../jina_ya_the_webserver_dir/./0-transfer_file 4-not_found_page_404 52.87.235.104 ubuntu ~/.ssh/id_rsa
