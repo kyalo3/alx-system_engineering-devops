@@ -1,30 +1,4 @@
 #!/usr/bin/env bash
 #install Nginx
-sudo apt update
-sudo apt install nginx
-#configure Nginx
-sudo vi /etc/nginx/nginx.conf
-
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html/web_stack2.html;
-
-    # Add index.php to the list if you are using PHP
-    index index.html index.htm index.nginx-debian.html;
-
-    server_name ubuntu;
-
-    location / {
-            # First attempt to serve request as file, then
-            # as directory, then fall back to displaying a 404.
-            #try_files $uri $uri/ =404;
-            return 200 "Kyalo!";
-    }
-
-    # Other configuration directives...
-}
-
-#restart Nginx
+sudo ln -sf /etc/nginx/site-available/defaults /etc/nginx/site-enabled/defaults
 sudo service nginx restart
