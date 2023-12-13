@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #install Nginx
-sudo ln -sf /etc/nginx/site-available/defaults /etc/nginx/site-enabled/defaults
+sudo ln -sf /etc/nginx/sites-available/defaults /etc/nginx/sites-enabled/defaults
 sudo service nginx restart
