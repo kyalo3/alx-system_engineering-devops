@@ -4,7 +4,7 @@
 import sys
 from api import number_of_subscribers
 
-def number_of_subscribers(subreddit):
+def top_ten(subreddit):
     try:
         return number_of_subscribers
     if subreddit == 0:
