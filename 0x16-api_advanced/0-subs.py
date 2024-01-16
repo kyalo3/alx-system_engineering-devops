@@ -2,6 +2,7 @@
 # a function that queries the Reddit API
 # Return - 0 on failire, 1 on success
 import sys
+sys.path.append('/path/to/directory/containing/api/module')
 from api import number_of_subscribers
 
 
