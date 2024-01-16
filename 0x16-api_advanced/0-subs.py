@@ -4,10 +4,15 @@
 import sys
 from api import number_of_subscribers
 
+
 def number_of_subscribers(subreddit):
+    result = number_of_subscribers(sys.argv[1])
     try:
         return number_of_subscribers
-    if subreddit == 0:
-        print("invalid subreddit")
+    except Exception as e:
+        print(f"An error: {e}")
+        return 0
+    if result is nit None:
+        print("{:d}".format(result))
     else:
         print("valid reddit")
