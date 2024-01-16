@@ -12,7 +12,3 @@ def number_of_subscribers(subreddit):
     except Exception as e:
         print(f"An error: {e}")
         return 0
-    if result is not None:
-        print("{:d}".format(result))
-    else:
-        print("valid reddit")
