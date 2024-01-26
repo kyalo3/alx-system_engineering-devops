@@ -7,14 +7,16 @@ import requests
 
 def top_ten(subreddit):
     """the function prints the titles of 10 hot posts listed"""
-    headers = {"User-Agent": "MyBot/0.0.1"}
-    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    headers = {"User-Agent": "Kyalo3"}
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
 
     # Make a GET request to the Reddit API
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
         data = response.json()
-        return data['data']['subscribers']
+        posts = data['data']['children']
+        for i in range(10):
+            print(posts[i]['data']['subscribers'])
     else:
-        return
+        print(None)
