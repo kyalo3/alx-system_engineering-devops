@@ -7,7 +7,7 @@ import requests
 
 def top_ten(subreddit):
     """the function prints the titles of 10 hot posts listed"""
-    headers = {"User-Agent": "Kyalo3"}
+    headers = {"User-Agent": "kyalo3"}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
 
     # Make a GET request to the Reddit API
